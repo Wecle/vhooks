@@ -10,12 +10,10 @@
 </template>
 
 <script setup lang="ts">
-import useToggle from '../../src/useToggle'
+import { useToggle } from '../../src'
 // import { useToggle } from '../../dist/vhooks.umd'
 
 console.log(useToggle)
 
 const [state, { toggle, setLeft, setRight }] = useToggle()
 </script>
-
-
