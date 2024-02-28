@@ -11,7 +11,6 @@
 
 <script setup lang="ts">
 import { useToggle } from '../../packages'
-// import { useToggle } from '../../dist/vhooks.umd'
 
 console.log(useToggle)
 
