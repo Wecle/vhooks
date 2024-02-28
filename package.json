@@ -1,7 +1,10 @@
 {
   "name": "vhooks",
-  "private": true,
-  "version": "0.0.0",
+  "private": false,
+  "license": "MIT",
+  "version": "0.0.1",
+  "description": "Vue hooks",
+  "main": "dist/vhooks.umd.js",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,6 +15,7 @@
     "vue": "^3.4.19"
   },
   "devDependencies": {
+    "@types/node": "^20.11.21",
     "@vitejs/plugin-vue": "^5.0.4",
     "typescript": "^5.2.2",
     "vite": "^5.1.4",
