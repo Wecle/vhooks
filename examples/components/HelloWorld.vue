@@ -18,5 +18,4 @@ console.log(useToggle)
 const [state, { toggle, setLeft, setRight }] = useToggle()
 </script>
 
-<style scoped>
-</style>
+
