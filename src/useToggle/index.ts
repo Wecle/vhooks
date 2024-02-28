@@ -1,4 +1,4 @@
-import { ref, computed } from 'vue'
+import { ref, computed, Ref } from 'vue'
 
 export interface Actions<T> {
   setLeft: () => void;
@@ -6,6 +6,12 @@ export interface Actions<T> {
   set: (value: T) => void;
   toggle: () => void;
 }
+
+function useToggle<T = boolean>(): [Ref<T>, Actions<T>]
+
+function useToggle<T>(defaultValue: T): [Ref<T>, Actions<T>]
+
+function useToggle<T, U>(defaultValue: T, reverseValue: U): [Ref<T | U>, Actions<T | U>]
 
 function useToggle<D, R>(defaultValue: D = false as unknown as D, reverseValue?: R) {
   const state = ref<D | R>(defaultValue)
