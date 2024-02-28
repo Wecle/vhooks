@@ -14,10 +14,10 @@ function useToggle<T>(defaultValue: T): [Ref<T>, Actions<T>]
 function useToggle<T, U>(defaultValue: T, reverseValue: U): [Ref<T | U>, Actions<T | U>]
 
 function useToggle<D, R>(defaultValue: D = false as unknown as D, reverseValue?: R) {
-  const state = ref<D | R>(defaultValue)
+  const state = ref(defaultValue) as Ref<D | R>
 
   const actions = computed(() => {
-    const reverseValueOrigin = (reverseValue === undefined ? !state.value : reverseValue) as D | R
+    const reverseValueOrigin = (reverseValue ?? !state.value) as D | R
 
     const toggle = () => state.value = (state.value === defaultValue ? reverseValueOrigin : defaultValue)
     const set = (value: D | R) => state.value = value
