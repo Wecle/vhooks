@@ -8,9 +8,6 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     steps:
-      - name: Clean npm cache
-        run: npm cache clean --force
-
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -26,6 +23,9 @@ jobs:
       packages: write
       contents: read
     steps:
+      - name: Clean npm cache
+        run: npm cache clean --force
+
       - name: Install Dependencies
         run: npm ci
 
