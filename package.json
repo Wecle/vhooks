@@ -7,7 +7,7 @@
   "main": "dist/vhooks.umd.js",
   "type": "module",
   "publishConfig": {
-    "@wecle:registry": "https://npm.pkg.github.com/"
+    "@Wecle:registry": "https://npm.pkg.github.com/"
   },
   "repository": {
     "url": "git@github.com:Wecle/vhooks.git"
