@@ -18,30 +18,36 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - run: npm ci
-  publish:
+  publish-gpr:
     needs: build
     runs-on: ubuntu-latest
     permissions:
       packages: write
       contents: read
     steps:
-      - name: Setup Node.js and publish to GitHub Package Registry
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           registry-url: ${{ env.GITHUB_REGISTRY_URL }}
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Setup Node.js and publish to npm
-        uses: actions/setup-node@v4
+  publish-npm:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           registry-url: ${{ env.NPM_REGISTRY_URL }}
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
   release:
-    needs: publish
+    needs: [publish-gpr, publish-npm]
     runs-on: ubuntu-latest
     steps:
       - name: Bump version and push tag
