@@ -2,7 +2,7 @@
   "name": "@wecle/vhooks",
   "private": false,
   "license": "MIT",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Vue hooks",
   "main": "dist/vhooks.umd.js",
   "type": "module",
