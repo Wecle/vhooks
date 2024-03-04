@@ -2,7 +2,7 @@
   "name": "@wecle/vhooks",
   "private": false,
   "license": "MIT",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Vue hooks",
   "main": "dist/vhooks.umd.js",
   "type": "module",
@@ -10,10 +10,7 @@
     "name": "Wecle",
     "url": "https://github.com/Wecle"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Wecle/vhooks.git"
-  },
+  "repository": "https://github.com/Wecle/vhooks",
   "homepage": "https://github.com/Wecle/vhooks",
   "publishConfig": {
     "@Wecle:registry": "https://npm.pkg.github.com/"
